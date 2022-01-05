@@ -7,7 +7,7 @@ import { ItemComponent } from './item.component';
 
 @NgModule({
   declarations: [
-    ItemComponent
+    ItemRoutingModule.components
   ],
   imports: [
     CommonModule,
@@ -15,4 +15,5 @@ import { ItemComponent } from './item.component';
   ]
 })
 export class ItemModule { 
+  static item =ItemRoutingModule.components;
 }

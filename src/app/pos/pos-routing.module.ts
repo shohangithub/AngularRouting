@@ -6,14 +6,16 @@ import { ItemComponent } from './item/item.component';
 import { ItemModule } from './item/item.module';
 debugger
 const routes: Routes = [
-  {path:'item', loadChildren: ()=> import('./item/item.module').then(m=>m.ItemModule)},
-  {path:'pos', component: DashboardComponent}
- // {path:'', component: DashboardComponent},
+  //{path:'pos/item', loadChildren: ()=> import('./item/item.module').then(m=>m.ItemModule)},
+  {path:'pos', component: DashboardComponent,pathMatch:'full',
+  children:[
+    {path:'item', component: ItemComponent,pathMatch:'full'}
+  ]},
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes),
     ItemModule
   ],
   exports: [ItemModule,RouterModule]

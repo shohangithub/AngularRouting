@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { PosRoutingModule } from './pos-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ItemRoutingModule } from './item/item-routing.module';
 
 //PosRoutingModule.components
 @NgModule({
@@ -11,6 +10,7 @@ import { ItemRoutingModule } from './item/item-routing.module';
   imports: [
     CommonModule,
     PosRoutingModule
-  ]
+  ],
+  bootstrap: [DashboardComponent]
 })
 export class PosModule { }
